@@ -1,0 +1,9 @@
+{
+	"url": "/public/schemas/:schemaName",
+	"LOG_LEVEL": "info",
+	"cors": {
+		"headers": {
+			"X-Adstream-JSON-Schema": "json-schema"
+		}
+	}
+}

@@ -1,0 +1,428 @@
+{
+  "_id": "51e7ed435218e9d580744368",
+  "_created": "2013-11-28T06:44:56.180Z",
+  "_documentType": "schema",
+  "_modified": "2013-11-28T06:44:56.180Z",
+  "_parents": [
+    "4ef31ce1766ec96769b399bd"
+  ],
+  "_version": 2,
+  "group": [
+    "tv_order_item"
+  ],
+  "name": "Tv Order Item Schema",
+  "schema": {
+    "additionalProperties": false,
+    "extends": [
+      "system",
+      "market_schema"
+    ],
+    "properties": {
+      "_cm": {
+        "properties": {
+          "asset": {
+            "type": "object",
+            "required": false,
+            "extends": [
+              {
+                "ref": "asset_element_common#properties._cm",
+                "filter": "ordering"
+              },
+              {
+                "ref": "asset_element_project_common#properties._cm",
+                "filter": "ordering"
+              }
+            ],
+            "properties": {
+              "common": {
+                "required": false,
+                "type": "object",
+                "properties": {
+
+                }
+              },
+              "video": {
+                "required": false,
+                "type": "object",
+                "enabled": true,
+                "properties": {
+
+                }
+              }
+            }
+          },
+          "common": {
+            "enabled": true,
+            "order": 1,
+            "properties": {
+              "additionalInformation": {
+                "description": "Additional Details",
+                "type": "text",
+                "tags": [
+                  "traffic"
+                ],
+                "view": {
+                  "e": {
+                    "group": {
+                      "market_schema_metadata": "add_information"
+                    },
+                    "order": {
+                      "market_schema_metadata": 300
+                    },
+                    "width": 1
+                  },
+                  "template": "textarea",
+                  "v": {
+                    "group": {
+                      "market_schema_metadata": "add_information"
+                    },
+                    "order": {
+                      "market_schema_metadata": 300
+                    },
+                    "width": 1
+                  }
+                }
+              },
+              "clockNumber": {
+                "description": "Clock Number",
+                "enabled": true,
+                "pattern": "^[&|#_\/a-zA-Z0-9-]*$",
+                "required": true,
+                "type": "custom_code",
+                "tags": [
+                  "traffic"
+                ],
+                "mergeStrategy": "mix_patterns",
+                "view": {
+                  "e": {
+                    "group": {
+                      "market_schema_metadata": "add_information"
+                    },
+                    "order": {
+                      "market_schema_metadata": 1
+                    },
+                    "width": 2
+                  },
+                  "template": "clocknumber",
+                  "v": {
+                    "group": {
+                      "market_schema_metadata": "add_information"
+                    },
+                    "order": {
+                      "market_schema_metadata": 1
+                    },
+                    "width": 2
+                  }
+                }
+              },
+              "duration": {
+                "description": "Duration",
+                "pattern": "^((\\d+)|((\\d+h)?\\s*(\\d+mn)?\\s*(\\d+s)?\\s*(\\d+ms)?))$",
+                "required": true,
+                "type": "string",
+                "tags": [
+                  "traffic"
+                ],
+                "view": {
+                  "e": {
+                    "group": {
+                      "market_schema_metadata": "add_information"
+                    },
+                    "order": {
+                      "market_schema_metadata": 3
+                    },
+                    "width": 2
+                  },
+                  "v": {
+                    "group": {
+                      "market_schema_metadata": "add_information"
+                    },
+                    "order": {
+                      "market_schema_metadata": 3
+                    },
+                    "width": 2
+                  }
+                }
+              },
+              "firstAirDate": {
+                "description": "First Air Date",
+                "required": true,
+                "type": "date",
+                "tags": [
+                  "traffic"
+                ],
+                "view": {
+                  "e": {
+                    "group": {
+                      "market_schema_metadata": "add_information"
+                    },
+                    "order": {
+                      "market_schema_metadata": 4
+                    },
+                    "width": 2
+                  },
+                  "v": {
+                    "group": {
+                      "market_schema_metadata": "add_information"
+                    },
+                    "order": {
+                      "market_schema_metadata": 4
+                    },
+                    "width": 2
+                  }
+                }
+              },
+              "format": {
+                "description": "Format",
+                "maxItems": 1,
+                "name": "tv_order_video_format",
+                "required": [
+                  {
+                    "path": "_cm.common.item_type",
+                    "value": "ingest"
+                  }
+                ],
+                "type": "dictionary",
+                "validate": false,
+                "tags": [
+                  "traffic"
+                ],
+                "view": {
+                  "e": {
+                    "group": {
+                      "market_schema_metadata": "add_information"
+                    },
+                    "order": {
+                      "market_schema_metadata": 5
+                    },
+                    "width": 2
+                  },
+                  "sorted": true,
+                  "v": {
+                    "group": {
+                      "market_schema_metadata": "add_information"
+                    },
+                    "order": {
+                      "market_schema_metadata": 5
+                    },
+                    "width": 2
+                  }
+                }
+              },
+              "item_type": {
+                "type": "string",
+                "required": true,
+                "enum": [
+                  "delivery",
+                  "ingest"
+                ],
+                "default": "delivery",
+                "view": {
+                  "e": {
+                    "hidden": true
+                  }
+                }
+              },
+              "title": {
+                "description": "Title",
+                "required": true,
+                "type": "string",
+                "tags": [
+                  "traffic"
+                ],
+                "pattern": "^.{1,100}$",
+                "view": {
+                  "e": {
+                    "group": {
+                      "market_schema_metadata": "add_information"
+                    },
+                    "order": {
+                      "market_schema_metadata": 2
+                    },
+                    "width": 2
+                  },
+                  "v": {
+                    "group": {
+                      "market_schema_metadata": "add_information"
+                    },
+                    "order": {
+                      "market_schema_metadata": 2
+                    },
+                    "width": 2
+                  }
+                }
+              },
+              "mediaAgency": {
+                "scope": "agency",
+                "description": "Media Agency",
+                "name": "MediaAgency_video",
+                "type": "dictionary",
+                "extendable": true,
+                "maxItems": 1,
+                "view": {
+                  "e": {
+                    "group": {
+                      "market_schema_metadata": "add_information"
+                    },
+                    "order": {
+                      "market_schema_metadata": 50
+                    },
+                    "width": 2
+                  },
+                  "v": {
+                    "group": {
+                      "market_schema_metadata": "add_information"
+                    },
+                    "order": {
+                      "market_schema_metadata": 50
+                    },
+                    "width": 2
+                  }
+                }
+              },
+              "creativeAgency": {
+                "scope": "agency",
+                "description": "Creative Agency",
+                "name": "Advertisingagency_video",
+                "type": "dictionary",
+                "extendable": true,
+                "maxItems": 1,
+                "view": {
+                  "e": {
+                    "group": {
+                      "market_schema_metadata": "add_information"
+                    },
+                    "order": {
+                      "market_schema_metadata": 51
+                    },
+                    "width": 2
+                  },
+                  "v": {
+                    "group": {
+                      "market_schema_metadata": "add_information"
+                    },
+                    "order": {
+                      "market_schema_metadata": 51
+                    },
+                    "width": 2
+                  }
+                }
+              }
+            },
+            "type": "object"
+          },
+          "destinations": {
+            "enabled": [
+              {
+                "path": "_cm.common.item_type",
+                "value": "delivery"
+              }
+            ],
+            "properties": {
+              "count": {
+                "properties": {
+                  "atDestination": {
+                    "type": "integer",
+                    "default": 0,
+                    "description": "calc by core"
+                  },
+                  "cancelled": {
+                    "type": "integer",
+                    "default": 0,
+                    "description": "calc by core"
+                  },
+                  "total": {
+                    "type": "integer",
+                    "default": 0,
+                    "description": "calc by core"
+                  }
+                },
+                "type": "object"
+              },
+              "items": {
+                "hints": [
+                  "order_item_cache_destinations"
+                ],
+                "items": {
+                  "properties": {
+                    "a4Id": {
+                      "type": "string"
+                    },
+                    "actuallyDelivered": {
+                      "type": "date",
+                      "required": false
+                    }
+                  },
+                  "type": "object"
+                },
+                "minItems": 0,
+                "required": false,
+                "type": "array",
+                "view": {
+                  "e": {
+                    "group": "select_broadcast_destinations"
+                  }
+                }
+              }
+            },
+            "type": "object",
+            "view": {
+              "e": {
+                "order": 1,
+                "group": "select_broadcast_destinations"
+              },
+              "v": {
+                "order": 1,
+                "group": "select_broadcast_destinations"
+              }
+            }
+          },
+          "tv": {
+            "properties": {
+              "market": {
+                "required": false,
+                "type": "string"
+              },
+              "marketCountry": {
+                "type": "string"
+              },
+              "marketId": {
+                "description": "Market",
+                "include_in_all": false,
+                "map_fields": {
+                  "market": "name",
+                  "marketCountry": "country"
+                },
+                "maxItems": 1,
+                "name": "ordering_tv_market",
+                "required": true,
+                "type": "dictionary"
+              },
+              "orderReference": {
+                "type": "integer",
+                "required": false
+              }
+            },
+            "required": true,
+            "type": "object"
+          }
+        }
+      },
+      "type": "object",
+      "view": {
+        "groups": {
+          "metadata": {
+            "add_information": {
+              "description": "Add Information",
+              "group": "add_information",
+              "order": 1
+            }
+          }
+        }
+      }
+    },
+    "type": "object"
+  },
+  "_cacheKey": "tv_order_item",
+  "_schemaName": "tv_order_item"
+}

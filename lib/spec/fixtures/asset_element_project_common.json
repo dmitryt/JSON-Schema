@@ -1,0 +1,284 @@
+{
+  "_id": "515282025f9c02f9f283159a",
+  "_created": "2013-11-28T06:44:54.476Z",
+  "_documentType": "schema",
+  "_modified": "2013-11-28T06:44:54.476Z",
+  "_parents": [
+    "4ef31ce1766ec96769b399bd"
+  ],
+  "_version": 8,
+  "group": [
+    "asset_element_project_common"
+  ],
+  "name": "Default Asset/Element/Project Common schema",
+  "schema": {
+    "properties": {
+      "_cm": {
+        "properties": {
+          "common": {
+            "boost": 5,
+            "properties": {
+              "Campaign": {
+                "description": "Campaign",
+                "enabled": true,
+                "include_in_all": true,
+                "required": false,
+                "tags": [
+                  "ordering"
+                ],
+                "type": "string",
+                "view": {
+                  "v": {
+                    "order": {
+                      "asset_video": 5,
+                      "asset_common": 4
+                    },
+                    "width": 1,
+                    "group": {
+                      "asset_video": "ProductInfo_1370513111411",
+                      "asset_common": "ProductInfo_1370513111411"
+                    },
+                    "visible": true
+                  },
+                  "e": {
+                    "order": {
+                      "asset_video": 5,
+                      "asset_common": 4
+                    },
+                    "width": 1,
+                    "group": {
+                      "asset_video": "ProductInfo_1370513111411",
+                      "asset_common": "ProductInfo_1370513111411"
+                    },
+                    "visible": true
+                  }
+                }
+              },
+              "advertiser": {
+                "boost": 125,
+                "description": "Advertiser",
+                "enabled": true,
+                "extendable": true,
+                "include_in_all": true,
+                "maxItems": 1,
+                "name": "advertiser",
+                "required": false,
+                "scope": "agency",
+                "tags": [
+                  "ordering"
+                ],
+                "type": "dictionary",
+                "highlighted": true,
+                "view": {
+                  "e": {
+                    "group": {
+                      "asset_video": "ProductInfo_1370513111411",
+                      "asset_common": "ProductInfo_1370513111411"
+                    },
+                    "order": {
+                      "asset_video": 1,
+                      "asset_common": 0
+                    },
+                    "readonly": [
+                      {
+                        "path": "_cm.common.mediaType",
+                        "value": "video"
+                      },
+                      {
+                        "path": "_cm.common.mediaSubType",
+                        "value": "QC-ed master"
+                      }
+                    ],
+                    "visible": true,
+                    "width": 1
+                  },
+                  "isMultilevel": true,
+                  "v": {
+                    "visible": true,
+                    "order": {
+                      "asset_video": 1,
+                      "asset_common": 0
+                    },
+                    "width": 1,
+                    "group": {
+                      "asset_video": "ProductInfo_1370513111411",
+                      "asset_common": "ProductInfo_1370513111411"
+                    }
+                  }
+                }
+              },
+              "brand": {
+                "boost": 125,
+                "depends": {
+                  "advertiser": "_cm.common.advertiser"
+                },
+                "description": "Brand",
+                "enabled": true,
+                "extendable": true,
+                "include_in_all": true,
+                "maxItems": 1,
+                "name": "advertiser",
+                "required": false,
+                "scope": "agency",
+                "tags": [
+                  "ordering"
+                ],
+                "type": "dictionary",
+                "highlighted": true,
+                "view": {
+                  "v": {
+                    "visible": true,
+                    "order": {
+                      "asset_video": 2,
+                      "asset_common": 1
+                    },
+                    "width": 1,
+                    "group": {
+                      "asset_video": "ProductInfo_1370513111411",
+                      "asset_common": "ProductInfo_1370513111411"
+                    }
+                  },
+                  "e": {
+                    "visible": true,
+                    "order": {
+                      "asset_video": 2,
+                      "asset_common": 1
+                    },
+                    "width": 1,
+                    "group": {
+                      "asset_video": "ProductInfo_1370513111411",
+                      "asset_common": "ProductInfo_1370513111411"
+                    }
+                  },
+                  "isMultilevel": true
+                }
+              },
+              "product": {
+                "boost": 125,
+                "depends": {
+                  "sub_brand": "_cm.common.sub_brand"
+                },
+                "description": "Product",
+                "enabled": true,
+                "extendable": true,
+                "include_in_all": true,
+                "maxItems": 1,
+                "name": "advertiser",
+                "required": false,
+                "scope": "agency",
+                "tags": [
+                  "ordering"
+                ],
+                "type": "dictionary",
+                "highlighted": true,
+                "view": {
+                  "v": {
+                    "visible": true,
+                    "order": {
+                      "asset_video": 4,
+                      "asset_common": 3
+                    },
+                    "width": 1,
+                    "group": {
+                      "asset_video": "ProductInfo_1370513111411",
+                      "asset_common": "ProductInfo_1370513111411"
+                    }
+                  },
+                  "e": {
+                    "visible": true,
+                    "order": {
+                      "asset_video": 4,
+                      "asset_common": 3
+                    },
+                    "width": 1,
+                    "group": {
+                      "asset_video": "ProductInfo_1370513111411",
+                      "asset_common": "ProductInfo_1370513111411"
+                    }
+                  },
+                  "isMultilevel": true
+                }
+              },
+              "sub_brand": {
+                "boost": 125,
+                "depends": {
+                  "brand": "_cm.common.brand"
+                },
+                "description": "Sub Brand",
+                "enabled": true,
+                "extendable": true,
+                "include_in_all": true,
+                "maxItems": 1,
+                "name": "advertiser",
+                "required": false,
+                "scope": "agency",
+                "tags": [
+                  "ordering"
+                ],
+                "type": "dictionary",
+                "highlighted": true,
+                "view": {
+                  "v": {
+                    "visible": true,
+                    "order": {
+                      "asset_video": 3,
+                      "asset_common": 2
+                    },
+                    "width": 1,
+                    "group": {
+                      "asset_video": "ProductInfo_1370513111411",
+                      "asset_common": "ProductInfo_1370513111411"
+                    }
+                  },
+                  "e": {
+                    "visible": true,
+                    "order": {
+                      "asset_video": 3,
+                      "asset_common": 2
+                    },
+                    "width": 1,
+                    "group": {
+                      "asset_video": "ProductInfo_1370513111411",
+                      "asset_common": "ProductInfo_1370513111411"
+                    }
+                  },
+                  "isMultilevel": true
+                }
+              }
+            },
+            "required": true,
+            "tags": [
+              "ordering"
+            ],
+            "type": "object"
+          }
+        },
+        "required": true,
+        "tags": [
+          "ordering"
+        ],
+        "type": "object"
+      }
+    },
+    "type": "object",
+    "view": {
+      "groups": {
+        "common": {
+          "_default": {
+            "order": 0,
+            "description": "",
+            "hidden": false,
+            "group": "_default"
+          },
+          "ProductInfo_1370513111411": {
+            "order": -100,
+            "description": "Product Info",
+            "group": "ProductInfo_1370513111411"
+          }
+        }
+      }
+    }
+  },
+  "_cacheKey": "asset_element_project_common",
+  "_schemaName": "asset_element_project_common"
+}

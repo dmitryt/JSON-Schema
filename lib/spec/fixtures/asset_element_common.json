@@ -1,0 +1,398 @@
+{
+  "_id": "514fe7855f9c02f9f2831229",
+  "_created": "2013-11-28T06:44:54.455Z",
+  "_documentType": "schema",
+  "_modified": "2013-11-28T06:44:54.455Z",
+  "_parents": [
+    "4ef31ce1766ec96769b399bd"
+  ],
+  "_version": 8,
+  "group": [
+    "asset_element_common"
+  ],
+  "name": "Default Asset/Element Common schema",
+  "schema": {
+    "properties": {
+      "_cm": {
+        "properties": {
+          "common": {
+            "properties": {
+              "isPlayout": {
+                "description": "Is playout",
+                "include_in_all": false,
+                "type": "boolean",
+                "tags": [
+                  "ordering"
+                ],
+                "view": {
+                  "e": {
+                    "order": {
+                      "asset_video": 674
+                    },
+                    "group": {
+                      "asset_video": "_default"
+                    }
+                  },
+                  "v": {
+                    "order": {
+                      "asset_video": 674
+                    },
+                    "group": {
+                      "asset_video": "_default"
+                    }
+                  }
+                }
+              },
+              "mediaSubType": {
+                "depends": {
+                  "mediaType": "_cm.common.mediaType"
+                },
+                "description": "Media sub-type",
+                "include_in_all": true,
+                "maxItems": 1,
+                "name": "media_sub_types",
+                "required": false,
+                "type": "dictionary",
+                "scope": "agency",
+                "view": {
+                  "e": {
+                    "group": {
+                      "asset_video": "Technical_1374145047013"
+                    },
+                    "order": {
+                      "asset_video": 2
+                    },
+                    "readonly": [
+                      {
+                        "path": "_cm.common.mediaType",
+                        "value": "video"
+                      },
+                      {
+                        "path": "_cm.common.mediaSubType",
+                        "value": "QC-ed master"
+                      }
+                    ]
+                  },
+                  "isMultilevel": true,
+                  "v": {
+                    "order": {
+                      "asset_video": 2
+                    },
+                    "group": {
+                      "asset_video": "Technical_1374145047013"
+                    }
+                  }
+                }
+              },
+              "mediaType": {
+                "description": "Media type",
+                "include_in_all": true,
+                "maxItems": 1,
+                "name": "media_sub_types",
+                "required": false,
+                "type": "dictionary",
+                "view": {
+                  "e": {
+                    "order": {
+                      "asset_video": 1
+                    },
+                    "group": {
+                      "asset_video": "Technical_1374145047013"
+                    },
+                    "readonly": true
+                  },
+                  "isMultilevel": true,
+                  "v": {
+                    "order": {
+                      "asset_video": 1
+                    },
+                    "group": {
+                      "asset_video": "Technical_1374145047013"
+                    }
+                  }
+                }
+              },
+              "name": {
+                "boost": 125,
+                "description": "Title",
+                "include_in_all": true,
+                "required": true,
+                "type": "text",
+                "tags": [
+                  "ordering"
+                ],
+                "view": {
+                  "e": {
+                    "group": {
+                      "asset_video": "ProductInfo_1370513111411"
+                    },
+                    "order": {
+                      "asset_video": 6
+                    },
+                    "readonly": [
+                      {
+                        "path": "_cm.common.mediaType",
+                        "value": "video"
+                      },
+                      {
+                        "path": "_cm.common.mediaSubType",
+                        "value": "QC-ed master"
+                      }
+                    ]
+                  },
+                  "v": {
+                    "order": {
+                      "asset_video": 6
+                    },
+                    "group": {
+                      "asset_video": "ProductInfo_1370513111411"
+                    }
+                  }
+                }
+              },
+              "status": {
+                "description": "Status",
+                "type": "string",
+                "view": {
+                  "e": {
+                    "order": {
+                      "asset_video": 675
+                    },
+                    "group": {
+                      "asset_video": "_default"
+                    },
+                    "hidden": true
+                  },
+                  "v": {
+                    "order": {
+                      "asset_video": 675
+                    },
+                    "group": {
+                      "asset_video": "_default"
+                    }
+                  }
+                }
+              }
+            },
+            "required": true,
+            "tags": [
+              "ordering"
+            ],
+            "type": "object"
+          },
+          "video": {
+            "enabled": [
+              {
+                "path": "_cm.common.mediaType",
+                "value": "video"
+              }
+            ],
+            "properties": {
+              "clockNumber": {
+                "boost": 625,
+                "description": "Clock number",
+                "enabled": [
+                  {
+                    "path": "_cm.common.mediaType",
+                    "value": "video"
+                  }
+                ],
+                "pattern": "\\S*",
+                "required": [
+                  {
+                    "path": "_cm.common.mediaType",
+                    "value": "video"
+                  },
+                  {
+                    "path": "_cm.common.mediaSubType",
+                    "value": "Distribution Master"
+                  }
+                ],
+                "tags": [
+                  "custom_code",
+                  "ordering"
+                ],
+                "type": "custom_code",
+                "highlighted": true,
+                "view": {
+                  "e": {
+                    "group": {
+                      "asset_video": "AdminInformation_1370512348277"
+                    },
+                    "order": {
+                      "asset_video": 1
+                    },
+                    "readonly": [
+                      {
+                        "path": "_cm.common.mediaType",
+                        "value": "video"
+                      },
+                      {
+                        "path": "_cm.common.mediaSubType",
+                        "value": "QC-ed master"
+                      }
+                    ],
+                    "visible": true
+                  },
+                  "template": "clocknumber",
+                  "v": {
+                    "order": {
+                      "asset_video": 1
+                    },
+                    "group": {
+                      "asset_video": "AdminInformation_1370512348277"
+                    },
+                    "visible": true,
+                    "tiles": {
+                      "video": 2
+                    }
+                  }
+                }
+              },
+              "country": {
+                "description": "Country",
+                "name": "country",
+                "type": "dictionary",
+                "maxItems": 1,
+                "view": {
+                  "e": {
+                    "order": {
+                      "asset_video": 5
+                    },
+                    "group": {
+                      "asset_video": "AdminInformation_1370512348277"
+                    }
+                  },
+                  "v": {
+                    "order": {
+                      "asset_video": 5
+                    },
+                    "group": {
+                      "asset_video": "AdminInformation_1370512348277"
+                    }
+                  }
+                }
+              },
+              "description": {
+                "description": "Description",
+                "type": "string",
+                "view": {
+                  "e": {
+                    "order": {
+                      "asset_video": 9
+                    },
+                    "group": {
+                      "asset_video": "AgencyInformation_1374146998090"
+                    },
+                    "visible": false
+                  },
+                  "v": {
+                    "order": {
+                      "asset_video": 9
+                    },
+                    "group": {
+                      "asset_video": "AgencyInformation_1374146998090"
+                    },
+                    "visible": false
+                  }
+                }
+              },
+              "designer": {
+                "description": "Designer",
+                "type": "string",
+                "view": {
+                  "e": {
+                    "order": {
+                      "asset_video": 10
+                    },
+                    "group": {
+                      "asset_video": "AgencyInformation_1374146998090"
+                    },
+                    "visible": false
+                  },
+                  "v": {
+                    "order": {
+                      "asset_video": 10
+                    },
+                    "group": {
+                      "asset_video": "AgencyInformation_1374146998090"
+                    },
+                    "visible": false
+                  }
+                }
+              },
+              "duration": {
+                "description": "Duration",
+                "type": "string",
+                "view": {
+                  "e": {
+                    "group": {
+                      "asset_video": "AdminInformation_1370512348277"
+                    },
+                    "order": {
+                      "asset_video": 3
+                    },
+                    "readonly": [
+                      {
+                        "path": "_cm.common.mediaType",
+                        "value": "video"
+                      },
+                      {
+                        "path": "_cm.common.mediaSubType",
+                        "value": "QC-ed master"
+                      }
+                    ]
+                  },
+                  "v": {
+                    "order": {
+                      "asset_video": 3
+                    },
+                    "group": {
+                      "asset_video": "AdminInformation_1370512348277"
+                    }
+                  }
+                }
+              },
+              "writtenLocation": {
+                "description": "Written location",
+                "type": "string",
+                "view": {
+                  "e": {
+                    "order": {
+                      "asset_video": 4
+                    },
+                    "group": {
+                      "asset_video": "_default"
+                    },
+                    "visible": false
+                  },
+                  "v": {
+                    "order": {
+                      "asset_video": 4
+                    },
+                    "group": {
+                      "asset_video": "_default"
+                    },
+                    "visible": false
+                  }
+                }
+              }
+            },
+            "tags": [
+              "ordering"
+            ],
+            "type": "object"
+          }
+        },
+        "required": true,
+        "tags": [
+          "ordering"
+        ],
+        "type": "object"
+      }
+    },
+    "type": "object"
+  },
+  "_cacheKey": "asset_element_common",
+  "_schemaName": "asset_element_common"
+}

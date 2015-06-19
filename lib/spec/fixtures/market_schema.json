@@ -1,0 +1,61 @@
+{
+  "_id": "5460a994272afa37dfb598d9",
+  "_documentType": "schema",
+  "group": [
+    "market_schema"
+  ],
+  "name": "Market Schema",
+  "schema": {
+    "additionalProperties": false,
+    "properties": {
+      "_cm": {
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "type": "dynamic_object",
+            "properties": {
+              "subtitlesRequired": {
+                "description": "Subtitles Required",
+                "maxItems": 1,
+                "name": "tv_market_uk_subtitles_required",
+                "required": true,
+                "type": "dictionary",
+                "validate": false,
+                "view": {
+                  "sorted": true,
+                  "showInSeparateColumn": true,
+                  "e": {
+                    "width": 2,
+                    "order": {
+                      "market_schema_metadata": 100,
+                      "traffic_common": 100
+                    },
+                    "group": {
+                      "market_schema_metadata": "add_information",
+                      "traffic_common": "traffic_info"
+                    },
+                    "readOnlyInTraffic": true
+                  },
+                  "v": {
+                    "width": 2,
+                    "order": {
+                      "market_schema_metadata": 100,
+                      "traffic_common": 100
+                    },
+                    "group": {
+                      "market_schema_metadata": "add_information",
+                      "traffic_common": "traffic_info"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "type": "object"
+  },
+  "_cacheKey": "market_schema",
+  "_schemaName": "market_schema"
+}

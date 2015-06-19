@@ -1,0 +1,21 @@
+{
+  "_id": "5077f7bdbf1a2d4097659df7",
+  "_created": "2013-11-28T06:44:52.467Z",
+  "_documentType": "schema",
+  "_modified": "2013-11-28T06:44:52.467Z",
+  "_parents": [
+    "4ef31ce1766ec96769b399bd"
+  ],
+  "_version": 1,
+  "group": [
+    "system"
+  ],
+  "name": "system",
+  "schema": {
+    "additionalProperties": false,
+    "properties": {},
+    "type": "object"
+  },
+  "_cacheKey": "system",
+  "_schemaName": "system"
+}
