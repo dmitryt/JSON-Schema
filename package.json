@@ -20,7 +20,7 @@
     "q": "~1.1.2"
   },
   "devDependencies": {
-    "debug": "~2.1.0",
+    "debug": "~4.1.1",
     "gulp": "~3.8.10",
     "gulp-shell": "~0.2.11",
     "hint-hint": "~0.3.0",
